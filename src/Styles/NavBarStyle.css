@@ -159,6 +159,12 @@ span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:h
 .poster
 {
     box-shadow: 5px 5px 40px #EE9B00 ;
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+    cursor: pointer;
+}
+.poster:hover{
+    filter: opacity(50%);
 }
 
 .movie1
@@ -166,7 +172,9 @@ span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:h
     display: flex;
     justify-content: flex-start;
     margin: 40px;
+
 }
+
 .title
 {
     font-size: 30px;
@@ -187,5 +195,17 @@ span #HomeLight:hover, #MoviesLight:hover, #TrendingLight:hover, #PricingLight:h
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+.FilmDetailsDescription{
+    color: white;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.75);
+    backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    text-align: justify;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px;
 }
 

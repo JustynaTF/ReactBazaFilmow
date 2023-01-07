@@ -4,6 +4,8 @@ import MovieTitles from "./MovieTitles";
 import MovieRatings from "./MovieRatings";
 import Movie from "./Movie";
 import data from "../MoviesData";
+import {NavLink} from "react-router-dom";
+import FilmDetails from "./FilmDetails";
 
 const Movies =()=>{
     const data2=data
@@ -15,12 +17,11 @@ const Movies =()=>{
                     return(
                         <div className="filmCointainer">
                             <Movie/>
-                            <div className="movieData">
+                        <div className="movieData">
                                 <MovieTitles/>
                                 <MovieRatings/>
                             </div>
                         </div>
-
                     )
                 } )
             }

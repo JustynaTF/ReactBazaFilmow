@@ -1,5 +1,5 @@
 import React, {Fragment, useState} from 'react';
-import {Routes, Route, NavLink, Switch} from "react-router-dom"
+import {Routes, Route, NavLink, } from "react-router-dom"
 import '../Styles/NavBarStyle.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {GoSearch} from "react-icons/go";
@@ -9,6 +9,7 @@ import Register from "./Register";
 import Movies from "./Movies";
 import LastAdded from "./LastAdded";
 import Rank from "./Rank";
+import FilmDetails from "./FilmDetails";
 
 function Navbar(){
     const[toggle, setToggle] = useState(true)
@@ -16,7 +17,9 @@ function Navbar(){
         <Fragment>
             <nav className={toggle ? '' : 'navBarColor'}>
                 <div className="nav-options">
-                    <h1 id={toggle ? '' : 'heading'}>JUSTMOVIES</h1>
+                    <NavLink to="" style={({isActive}) => {return {color:isActive ? '#fff' : '#EE9B00'}}}>
+                        <h1 id={toggle ? '' : 'heading'}>JUSTMOVIES</h1>
+                    </NavLink>
                     <GiFilmStrip id='filmStrip'/>
                     <NavLink to="" style={({isActive}) => {return {color:isActive ? '#fff' : '#EE9B00'}}}>
                         <span id={toggle ? 'Movies' : 'MoviesLight'}>Filmy</span>
@@ -25,7 +28,7 @@ function Navbar(){
                         <span id={toggle ? 'Movies' : 'MoviesLight'}>Rankingi </span>
                     </NavLink>
                     <NavLink to="/LastAdded"style={({isActive}) => {return {color:isActive ? '#fff' : '#EE9B00'}}}>
-                        <span id={toggle ? 'Movies' : 'MoviesLight'}>Ostatnio_Dodane</span>
+                        <span id={toggle ? 'Movies' : 'MoviesLight'}>Dodaj_Film</span>
                     </NavLink>
                 </div>
                     <div className="input-group">
@@ -50,6 +53,7 @@ function Navbar(){
                 <Route path='/Rank' element={<Rank/>}/>
                 <Route path='/Login' element={<Login/>}/>
                 <Route path='/Register' element={<Register/>}/>
+                <Route path='/FilmDetails' element={<FilmDetails/>}/>
             </Routes>
         </Fragment>
 )}
