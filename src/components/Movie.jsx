@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import {NavLink} from "react-router-dom";
+import React, { Component } from "react";
 
-const Movie=()=>{
-
-    return(
+const Movie = (props) => {
+    return (
+        <>
             <div className="movie1">
-                <NavLink to="/FilmDetails"style={({isActive}) => {return {color:isActive ? '#fff' : '#EE9B00'}}}>
-                    <img width="300" height="auto" src="moviePosters/inception.jpg" className="poster" id='FilmDetails' text="Szczegóły"/>
-                </NavLink>
+                <img
+                    width="300px"
+                    height="auto"
+                    src={props.img}
+                    className="poster"
+                ></img>
             </div>
-    )
-}
+        </>
+    );
+};
 export default Movie;

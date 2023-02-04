@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+body {
+    height: 100%;
+    background-color: black;
+}
+p {
+    color: white;
+}
+
+.nav-options {
+    position: sticky;
+    top: 0;
+
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    align-items: center;
+}
+.logoText{
+    margin-left: 70px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-size: 55px;
+}
+#filmStrip{
+    position: absolute;
+    margin-left: 10px;
+    font-size: 55px;
+    color: #fff;
+}
+
+.nav-options{
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 10px;
+}
+
+.input-group{
+    width: 800px; /* zmieniona wartość */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+.input-group input{
+    position: relative;
+    height: 35px;
+    border-radius: 100px;
+    border: none;
+}
+
+.input-group input[type='text']{
+    padding-left: 17px;
+    font-size: 1rem;
+    color: black;
+}
+
+.input-group input::placeholder{
+    color: black;
+
+    position: relative;
+}
+
+.input-group input:focus{
+    outline: none;
+}
+.search-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+
+.searchbtn {
+    background: transparent;
+    border: none;
+    border-radius: 100%;
+}
+.logRegButton{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.filmsCointainer {
+    width: 98%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    margin-top: 50px;
+    }
+
+.filmCointainer {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+    position: center;
+    border: 2px solid #EE9B00;
+    box-shadow: 5px 5px 40px rgba(238, 155, 0, 0.5);
+
+}
+.movieData
+{
+    position: center;
+    display: flex;
+    flex-direction: column;
+}
+.description
+{
+    font-size: 20px;
+    font-weight: normal;
+}
+.poster
+{
+    box-shadow: 5px 5px 40px #EE9B00 ;
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+    cursor: pointer;
+}
+.poster:hover{
+    filter: opacity(50%);
+}
+
+.movie1
+{
+    display: flex;
+    justify-content: flex-start;
+    margin: 40px;
+}
+
+.title
+{
+    font-size: 30px;
+    font-weight: bold;
+    color: #EE9B00;
+    position: center;
+}
+.box
+{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.ratings
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.FilmDetailsDescription{
+    color: white;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 8px 32px 0 rgba(135, 31, 31, 0.75);
+    backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    text-align: justify;
+    letter-spacing: 0.2rem;
+    display: flex;
+    justify-content: space-around;
+    margin: 100px;
+}
+
+
+.registerForm {
+    width: 20%;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: black;
+    padding: 20px;
+    border-radius: 20px;
+    color: orange;
+}
+.btn{
+    color:white;
+}
+
+*{
+    position: center;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+.cover h3{
+    margin: 30px
+}
+.cover label{
+    margin: 10px;
+}
+.page{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cover{
+    width: 30em;
+    height: 40em;
+    position: relative;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 5px 5px 40px #EE9B00;
+    backdrop-filter: blur(8.5px);
+    border-radius: 10px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    margin-top: 200px;
+
+}
+
+.alt-login div{
+    width: 45%;
+    height: 90%;
+    border-radius: 0.25em;
+    background-color: black;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    background-color: rgb(229, 226, 226);
+    height: 4em;
+    width: 80%;
+    border-radius: 0.25em;
+    text-align: left;
+    padding: 2em;
+}
+
+
+.text{
+    position: relative;
+    bottom: -2em;
+}
+.hide {
+    position: absolute;
+    transform: scale(0);
+}
+
+.register-popup{
+    position: absolute;
+    height: 30em;
+    width: 30em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    transform: scale(1);
+    transition: 1.5s;
+}
+.btn-2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px;
+}

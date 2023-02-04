@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieTitles from "./MovieTitles";
-import MovieRatings from "./MovieRatings";
-import Movie from "./Movie";
-import data from "../MoviesData";
-import {NavLink} from "react-router-dom";
-import FilmDetails from "./FilmDetails";
+import axios from "axios";
+import React, { Component, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const Movies =()=>{
-    const data2=data
-
+const Movies = () => {
+    const { id } = useParams();
+    useEffect(() => {
+        console.log(id);
+        getFilmInfo();
+    }, []);
+    const [content, setContent] = useState({});
+    const getFilmInfo = () => {
+        axios
+            .get(`https://at.usermd.net/api/movies/${id}`)
+            .then((response) => setContent(response.data));
+    };
     return (
-        <div className="filmsCointainer">
-            {
-                data.map((data, index)=>{
-                    return(
-                        <div className="filmCointainer">
-                            <Movie/>
-                        <div className="movieData">
-                                <MovieTitles/>
-                                <MovieRatings/>
-                            </div>
-                        </div>
-                    )
-                } )
-            }
-        </div>
+        <>
+            <div>
+                <div>
+                    <p className="description">{content.content}</p>
+                </div>
+            </div>
+        </>
     );
-}
+};
 export default Movies;

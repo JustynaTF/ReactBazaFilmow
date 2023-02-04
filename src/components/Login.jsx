@@ -1,31 +1,62 @@
-import React, {useState} from 'react';
-import '../Styles/Login.css'
+import React, { Component, useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-function Login(){
-    const [login, setLogin] = useState("")
-    const [password, setPassword] = useState("")
-
+const Login = () => {
+    const [login, setLogin] = useState("");
+    const [password, setPassword] = useState("");
+    const nav = useNavigate();
     const sendData = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const data = {
-            login, password
-        }
-        console.log(data)
-    }
-
-
+            login,
+            password,
+        };
+        axios({
+            method: "post",
+            url: "https://at.usermd.net/api/user/auth",
+            data: data,
+        })
+            .then((response) => {
+                localStorage.setItem("token", response.data.token);
+                console.log(response);
+                nav("/");
+                window.location.reload();
+            })
+            .catch((error) => console.log(error));
+        console.log(data);
+    };
     return (
-        <div >
-            <form className="cover" onSubmit={sendData}>
-            <h1>ZALOGUJ SIĘ</h1>
-            <input type="login" placeholder="Login:" value={login} onChange={(event)=>setLogin(event.target.value)}/>
-            <input type="password" placeholder="Hasło:" value={password} onChange={(event)=>setPassword(event.target.value)}/>
-                <div >
-                    <button type="submit" className="login-btn">ZALOGUJ </button>
+        <div className="cover">
+            <form onSubmit={sendData}>
+                <h3>Zaloguj się</h3>
+                <div className="mb-3">
+                    <label>Login</label>
+                    <input
+                        type="login"
+                        className="form-control"
+                        placeholder="Login:"
+                        value={login}
+                        onChange={(event) => setLogin(event.target.value)}
+                    />
                 </div>
+                <div className="mb-3">
+                    <label>Hasło</label>
+                    <input
+                        type="password"
+                        className="form-control"
+                        placeholder="Hasło:"
+                        value={password}
+                        onChange={(event) => setPassword(event.target.value)}
+                    />
+                </div>
+
+                    <button type="submit" className="btn">
+                        {" "}
+                        Zaloguj się
+                    </button>
             </form>
-        </div>)
-    }
-
+        </div>
+    );
+};
 export default Login;
-
